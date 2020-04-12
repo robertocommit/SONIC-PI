@@ -7,3 +7,5 @@
 - https://www.dummies.com/computers/raspberry-pi/use-note-chord-names-make-music-raspberry-pi/
 
 - https://www.maxwellantonucci.com/2019/10/30/sonic-pi-hotel-california.html
+
+- https://sonic-pi.mehackit.org/exercises/en/01-introduction/02-play-a-melody.html
