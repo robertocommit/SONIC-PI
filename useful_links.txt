@@ -5,3 +5,5 @@
 - https://www.chitarrelettriche.com/note-sulla-tastiera-chitarra-accordi-canzoni/
 
 - https://www.dummies.com/computers/raspberry-pi/use-note-chord-names-make-music-raspberry-pi/
+
+- https://www.maxwellantonucci.com/2019/10/30/sonic-pi-hotel-california.html
