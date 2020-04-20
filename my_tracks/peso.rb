@@ -1,3 +1,10 @@
+5.times do
+  use_synth :fm
+  p = play (chord :Eb3, :minor).choose - [0, 12, -12].choose, divisor: 0.01, div_slide: rrand(0, 10), depth: rrand(0.001, 2), attack: 0.01, release: rrand(0, 5), amp: 0.5
+  control p, divisor: rrand(0.001, 50)
+  sleep [0.5, 1, 2].choose
+end
+
 live_loop :first_block do
   sample :elec_blup
   sample :bd_ada
@@ -7,13 +14,15 @@ end
 sleep 4
 live_loop :second_block do
   sleep 0.4
-  sample :bd_haus
+  with_fx :distortion, distort: 0.09 do
+    sample :bd_haus
+  end
 end
 
-sleep 8
+sleep 4
 live_loop :third_block do
   sleep 0.8
-  sample :drum_cymbal_soft, rate: 2
+  sample :drum_cymbal_soft, rate: [1.8, 2, 2.2].choose
 end
 
 sleep 8
@@ -22,16 +31,16 @@ live_loop :fourth_block do
   sample :drum_snare_hard, rate: 0.1
 end
 
-sleep 8
+sleep 4
 live_loop :fifth_block do
   sleep 8
-  sample :loop_industrial, rate: 0.1
+  sample :loop_industrial, rate: [0.1, 0.3, 0.5].choose
 end
 
 sleep 8
 live_loop :sixth_block do
   sleep 8
-  use_random_seed 10
+  use_random_seed [9, 10, 11].choose
   notes =  (ring :b1, :b2, :e1, :e2, :b3, :e3)
   with_synth :dsaw do
     with_fx(:reverb, room: 0.5, mix: 0.3) do
@@ -54,4 +63,12 @@ live_loop :seventh_block do
       end
     end
   end
+end
+
+sleep 4
+live_loop :eigth_block do
+  use_synth :fm
+  p = play (chord :Eb3, :minor).choose - [0, 12, -12].choose, divisor: 0.01, div_slide: rrand(0, 10), depth: rrand(0.001, 2), attack: 0.01, release: rrand(0, 5), amp: 0.5
+  control p, divisor: rrand(0.001, 50)
+  sleep [0.5, 1, 2].choose
 end
